@@ -1,8 +1,7 @@
 # Lab 7: React Semester Result Card
-
-## How to Run
-1. Open the `7/` folder.
-2. Open `index.html` in your browser.
+1. Since the React code is now in a separate `App.js` file, you **must** run this folder through a local server (like XAMPP `htdocs` or VS Code **Live Server**).
+2. Open the URL (e.g., `http://localhost/WTLab/7/index.html`) in your browser.
+3. *Note:* Simply double-clicking the file may result in CORS errors.
 
 ## Requirements
 - Browser.

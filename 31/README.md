@@ -1,8 +1,8 @@
 # Lab 31: System Notifications (Redux)
 
 ## How to Run
-1. Open the `31/` folder.
-2. Open `index.html` in your browser.
+1. Run this folder through a local server (like XAMPP or VS Code **Live Server**).
+2. Open `http://localhost/WTLab/31/index.html`.
 
 ## Requirements
 - Browser.

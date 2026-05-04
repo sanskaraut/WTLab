@@ -1,8 +1,8 @@
 # Lab 30: Product Filtering with Redux
 
 ## How to Run
-1. Open the `30/` folder.
-2. Open `index.html` in your browser.
+1. Run this folder through a local server (like XAMPP or VS Code **Live Server**).
+2. Open `http://localhost/WTLab/30/index.html`.
 
 ## Requirements
 - Browser.

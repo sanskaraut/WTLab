@@ -1,8 +1,8 @@
 # Lab 28: Light & Dark Mode Toggle
 
 ## How to Run
-1. Open the `28/` folder.
-2. Open `index.html` in your browser.
+1. Run this folder through a local server (like XAMPP or VS Code **Live Server**).
+2. Open `http://localhost/WTLab/28/index.html`.
 
 ## Requirements
 - Browser.

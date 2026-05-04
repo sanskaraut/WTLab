@@ -1,8 +1,8 @@
 # Lab 29: Real-time Digital Clock (React Hooks)
 
 ## How to Run
-1. Open the `29/` folder.
-2. Open `index.html` in your browser.
+1. Run this folder through a local server (like XAMPP or VS Code **Live Server**).
+2. Open `http://localhost/WTLab/29/index.html`.
 
 ## Requirements
 - Browser.

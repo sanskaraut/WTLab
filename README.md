@@ -22,8 +22,9 @@ This repository contains 35 lab problems implemented across various tech stacks,
 
 ## Quick Demo Guide
 
-1.  **HTML/React Labs:** Just open `index.html` in any modern browser.
-2.  **PHP Labs:** Move the folder to `htdocs` (XAMPP) and access via `localhost`. SQL setup is in the `README.md`.
+1.  **HTML Labs:** Just open `index.html` in any modern browser.
+2.  **React Labs:** Since these use separate `App.js` files for a more authentic React experience, you **must** run them via a local server (like XAMPP or VS Code Live Server) to avoid CORS issues.
+3.  **PHP Labs:** Move the folder to `htdocs` (XAMPP) and access via `localhost`. SQL setup is in the `README.md`.
 3.  **Node.js Labs:** Run `npm install` and `node app.js`.
 4.  **Spring Boot Labs:** Open as a Maven project in your IDE and run the main class.
 
