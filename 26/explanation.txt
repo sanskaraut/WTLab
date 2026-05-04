@@ -1,0 +1,22 @@
+1. Problem Title: Order Management System with Spring Boot REST API
+
+2. System Overview:
+This project demonstrates the creation of a purely data-driven RESTful service. It manages customer orders by providing endpoints for creation, retrieval, and deletion. It focuses on the server-side processing of JSON data and the implementation of standard HTTP verbs.
+
+3. Technologies Used:
+- Java / Spring Boot
+- Jackson (JSON processing library, built into Spring Boot)
+- Maven
+
+4. Working Flow:
+Client sends JSON payload → `@PostMapping` captures and maps it to an 'Order' object → Object is added to the in-memory list → Client sends GET request → `@GetMapping` returns the list as a JSON array → Client sends DELETE request with ID → `@DeleteMapping` filters the list and removes the target.
+
+5. Code Explanation:
+- @RestController: Tells Spring that every method in this class returns a data object (JSON) instead of a view (HTML).
+- @RequestMapping("/api/orders"): Sets a common base URL for all endpoints in this controller.
+- @RequestBody: Deserializes the incoming JSON body into a Java POJO (Plain Old Java Object).
+- @PathVariable: Extracts data from the URL path (e.g., the ID in /api/orders/1).
+- removeIf(): A Java 8 stream-style method to concisely delete items from a collection based on a condition.
+
+6. Key Concept:
+RESTful Architecture: Using standard HTTP methods (POST, GET, DELETE) to manage resources (Orders) on a server.

@@ -1,0 +1,22 @@
+1. Problem Title: PHP Form Processing, Cookies, and Sessions
+
+2. System Overview:
+This project demonstrates the three core ways PHP interacts with user data: HTTP Methods (GET/POST), Client-side storage (Cookies), and Server-side state management (Sessions). It includes form validation and a basic login/logout flow.
+
+3. Technologies Used:
+- PHP (Server-side logic)
+- HTML5 / Bootstrap 5 (Frontend)
+- Browser Cookies & Server Sessions
+
+4. Working Flow:
+User fills form → Form submitted via POST → PHP validates email → PHP starts Session and sets Cookie → Page reloads to show 'Logged In' state → User clicks Logout → Session destroyed.
+
+5. Code Explanation:
+- session_start(): Initializes or resumes a session. Must be called before any output.
+- $_SERVER["REQUEST_METHOD"] == "POST": Checks if the form was submitted using the POST method.
+- filter_var($email, FILTER_VALIDATE_EMAIL): Built-in PHP function for secure email validation.
+- setcookie("name", value, time): Sends a cookie to the user's browser.
+- $_SESSION['user'] = $name: Stores data on the server that persists across pages.
+
+6. Key Concept:
+Statelessness of HTTP: Using Cookies and Sessions to overcome the fact that HTTP does not remember users between page requests.

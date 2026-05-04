@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semester Result - Lab 7</title>
+    <!-- React and Babel CDNs -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { background-color: #f0f2f5; padding-top: 50px; }
+        .card { border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+        .pass { color: green; font-weight: bold; }
+        .fail { color: red; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useState } = React;
+
+        // Child Component: Result
+        function Result({ mse, ese, subject }) {
+            const total = (mse * 0.3) + (ese * 0.7);
+            const status = total >= 40 ? "PASS" : "FAIL";
+
+            return (
+                <div className="card p-3 mb-3 border-start border-4 border-info">
+                    <h5>{subject}</h5>
+                    <div className="row">
+                        <div className="col-4">MSE: {mse} (30%)</div>
+                        <div className="col-4">ESE: {ese} (70%)</div>
+                        <div className="col-4">Total: <b>{total.toFixed(2)}</b></div>
+                    </div>
+                    <div className={status === "PASS" ? "pass mt-2" : "fail mt-2"}>
+                        Status: {status}
+                    </div>
+                </div>
+            );
+        }
+
+        // Child Component: Student
+        function Student({ name, course, marks }) {
+            return (
+                <div>
+                    <div className="mb-4">
+                        <h4>Student: <span className="text-primary">{name}</span></h4>
+                        <h6>Course: {course}</h6>
+                    </div>
+                    {marks.map((m, index) => (
+                        <Result key={index} subject={m.subject} mse={m.mse} ese={m.ese} />
+                    ))}
+                </div>
+            );
+        }
+
+        // Parent Component: App
+        function App() {
+            const [studentName] = useState("Sanskriti");
+            const [course] = useState("B.Tech CSE");
+            
+            // Sample Data
+            const [marks] = useState([
+                { subject: "Web Technology", mse: 25, ese: 60 },
+                { subject: "Data Structures", mse: 28, ese: 75 },
+                { subject: "Database Management", mse: 22, ese: 55 },
+                { subject: "Operating Systems", mse: 15, ese: 30 }
+            ]);
+
+            return (
+                <div className="container">
+                    <div className="row justify-content-center">
+                        <div className="col-md-8">
+                            <div className="card bg-white p-4">
+                                <h2 className="text-center mb-4">VIT Semester Result Card</h2>
+                                <hr />
+                                <Student name={studentName} course={course} marks={marks} />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            );
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<App />);
+    </script>
+</body>
+</html>

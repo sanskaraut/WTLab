@@ -1,0 +1,21 @@
+1. Problem Title: Secure Password Storage with BCrypt in Spring Boot
+
+2. System Overview:
+This application implements a critical security feature: password encryption. Instead of storing user passwords as plain text (which is a massive security risk), it uses a one-way hashing algorithm (BCrypt) to store and verify credentials.
+
+3. Technologies Used:
+- Java / Spring Boot
+- Spring Security (Crypto module)
+- Maven
+
+4. Working Flow:
+User registers → `BCryptPasswordEncoder.encode()` turns the password into a long, irreversible string (hash) → Hash is saved to DB → User logs in → `BCryptPasswordEncoder.matches()` compares the plain-text input against the stored hash → Access granted only if they match.
+
+5. Code Explanation:
+- BCryptPasswordEncoder: A built-in Spring class that handles complex hashing logic, including 'salting' (adding random data to each hash to make it unique).
+- encoder.encode(): Performs the one-way transformation of the password.
+- encoder.matches(raw, hashed): The only way to verify a password; it handles the salt and rounds to check if the input would result in the same hash.
+- @RequestParam: Used to extract username and password from the URL or form-data for testing.
+
+6. Key Concept:
+One-Way Hashing: The process of transforming data into a fixed-length string that cannot be mathematically reversed, ensuring that original passwords are never actually stored.

@@ -1,0 +1,21 @@
+1. Problem Title: Library Record Management System with Node.js API
+
+2. System Overview:
+This application provides a digital interface for librarians to maintain a catalog of books. It features a dashboard for viewing the entire collection and a simple form for adding new entries. It also exposes a RESTful API endpoint for external data retrieval.
+
+3. Technologies Used:
+- Node.js
+- Express.js
+- EJS-style Template Literals (for dynamic HTML)
+
+4. Working Flow:
+Librarian enters book details → POST request sent to '/add-book' → Server pushes data to the `books` array → Page reloads to show the updated catalog → GET request to '/api/books' returns JSON data.
+
+5. Code Explanation:
+- app.get('/'): Serves the main user interface with a dynamically generated table.
+- app.post('/add-book'): Extracts form data and appends it to the in-memory array.
+- res.json(books): Provides a raw data view, useful for integration with other apps.
+- map(): Higher-order function used to convert the array of book objects into table rows.
+
+6. Key Concept:
+In-Memory Persistence: Storing data in the server's RAM during the process lifetime, which is fast and efficient for demonstration purposes.

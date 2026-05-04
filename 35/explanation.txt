@@ -1,0 +1,21 @@
+1. Problem Title: Task Management System with Express.js REST API
+
+2. System Overview:
+This application provides a simple interface for managing a daily 'To-Do' list. It allows users to add tasks, mark them as completed, and delete them once finished. The data is accessible via a RESTful JSON API.
+
+3. Technologies Used:
+- Node.js
+- Express.js
+- JavaScript (In-memory storage and logic)
+
+4. Working Flow:
+User submits task → Express captures via POST → Object with ID and 'pending' status added to array → User toggles status → Server finds task by ID and flips status string → UI reflects change via conditional CSS → Delete removes item from array.
+
+5. Code Explanation:
+- app.get('/api/tasks'): The main data endpoint for the REST API.
+- tasks.find(t => t.id === id): Searches the array for a specific task based on the ID passed in the URL.
+- status === 'completed' ? 'line-through' : 'none': Conditional inline styling based on the task's data state.
+- Date.now(): Used to generate a unique numeric ID without needing an auto-incrementing database.
+
+6. Key Concept:
+State Mutation in API: Implementing logic to modify specific objects within a collection based on incoming requests (Updating/Deleting).

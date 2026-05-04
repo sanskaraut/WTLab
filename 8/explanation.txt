@@ -1,0 +1,20 @@
+1. Problem Title: Student Feedback Form with State Management and DOM Access
+
+2. System Overview:
+This application provides an interactive feedback collection tool. It allows students to rate their courses and provide comments. The system handles form validation, dynamic list updates, and direct DOM access using modern React hooks.
+
+3. Technologies Used:
+- React 18 (Hooks API)
+- Bootstrap 5 (Responsive split-screen layout)
+
+4. Working Flow:
+User enters data → State hooks (`useState`) track input values → 'Submit' clicked → Validation logic runs → New feedback object added to state array → React re-renders the list component → UI updates instantly.
+
+5. Code Explanation:
+- useState(): Used to create 'controlled components' where React is the single source of truth for the input values.
+- useRef(null): Used to access the textarea DOM node directly without triggering a re-render on every keystroke (uncontrolled component).
+- map() and key: Used to transform the feedback array into JSX elements. The `key` helps React identify which items have changed, been added, or removed.
+- Spread operator (...): Used to add the new feedback to the start of the list while preserving existing entries.
+
+6. Key Concept:
+Controlled vs. Uncontrolled Components: Understanding when to let React manage form data via state and when to access the DOM directly via refs.

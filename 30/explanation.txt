@@ -1,0 +1,22 @@
+1. Problem Title: Product Filtering System using React-Redux
+
+2. System Overview:
+This application manages a product catalog where users can filter items by category and price. Instead of using local component state, it uses Redux, a predictable state container, to manage the filtering logic globally.
+
+3. Technologies Used:
+- React 18
+- Redux 4 (Global State Management)
+- React-Redux (Binding library)
+
+4. Working Flow:
+User changes a filter → `dispatch()` sends an action to the Redux Store → Reducer calculates the new filter state → Store notifies the App component → `useSelector()` retrieves updated state → App re-filters the product list → UI updates.
+
+5. Code Explanation:
+- createStore(reducer): Initializes the global data store.
+- useSelector(): A hook that allows the component to subscribe to specific parts of the Redux state (like the current category).
+- useDispatch(): A hook that returns a reference to the dispatch function, used to trigger state changes.
+- Reducer: A pure function that takes the old state and an action, returning a new state based on the action type.
+- Provider: A wrapper component that makes the Redux store available to all nested components.
+
+6. Key Concept:
+Unidirectional Data Flow: Managing state in a central location (Store) to ensure that the UI stays consistent across complex applications.

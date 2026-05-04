@@ -1,0 +1,21 @@
+1. Problem Title: Student Complaint Registration System with Admin Portal
+
+2. System Overview:
+This application allows students to securely log in and file complaints regarding college facilities. It also provides an administrative view where college staff can log in to review all pending complaints.
+
+3. Technologies Used:
+- PHP (Session routing and database interaction)
+- MySQL (Persistent storage for complaints)
+- Bootstrap 5 (Responsive UI)
+
+4. Working Flow:
+User selects role → Logs in (Session started) → If Student: Accesses complaint form → Data saved to MySQL → If Admin: Accesses complaint list → Data fetched from MySQL and displayed in a table.
+
+5. Code Explanation:
+- $_SESSION['role']: Determines which UI view to render (Login, Student, or Admin).
+- INSERT INTO complaints: Saves the student's name, subject, and detailed description.
+- TIMESTAMP DEFAULT CURRENT_TIMESTAMP: MySQL automatically logs the exact time the complaint was filed.
+- session_destroy(): Clears the role flag and logs the user out.
+
+6. Key Concept:
+Role-Based Access Control (RBAC): Designing different user experiences and data access levels within the same application based on the user's identity.

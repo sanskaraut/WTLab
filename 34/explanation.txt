@@ -1,0 +1,22 @@
+1. Problem Title: Blog Management System with Express.js REST API
+
+2. System Overview:
+This project demonstrates the creation of a RESTful API for managing blog content. It provides endpoints to perform CRUD operations on blog posts, returning structured JSON data suitable for consumption by mobile apps or modern frontend frameworks.
+
+3. Technologies Used:
+- Node.js
+- Express.js
+- JSON (Data exchange format)
+
+4. Working Flow:
+Client sends HTTP request → Express router matches URL and method → Logic interacts with `posts` array → Server sends back response (Redirect for UI or JSON for API) → UI refreshes or API client receives data.
+
+5. Code Explanation:
+- app.use(express.json()): Allows the server to understand JSON data sent in request bodies.
+- app.get('/api/posts'): A Read endpoint that returns the entire collection as a JSON array.
+- app.post('/posts'): A Create endpoint that assigns a new ID and saves the post.
+- req.params.id: Used to capture variables from the URL (like which post ID to delete).
+- filter(): JavaScript array method used to efficiently remove items from the in-memory store.
+
+6. Key Concept:
+Representational State Transfer (REST): An architectural style for providing interoperability between computer systems on the internet using HTTP methods.

@@ -1,0 +1,20 @@
+1. Problem Title: Dynamic Theme Toggling using React Hooks
+
+2. System Overview:
+This application demonstrates a common modern web feature: the ability to switch between light and dark UI themes. It showcases how a single piece of state can control the visual appearance of multiple components and the overall page body.
+
+3. Technologies Used:
+- React 18 (useState Hook)
+- CSS3 (Transition effects and variable-based styling)
+
+4. Working Flow:
+User clicks toggle button → `toggleTheme` function is called → `setTheme` updates the state → Component re-renders → JSX template applies different CSS class names based on the new state value → UI updates visually.
+
+5. Code Explanation:
+- const [theme, setTheme] = useState("light"): Initializes the default theme.
+- className={`app-container ${theme === "light" ? "light-mode" : "dark-mode"}`}: Uses template literals and ternary operators to apply dynamic CSS classes.
+- transition: all 0.5s ease: A CSS property that ensures the color change is not jarring but smooth.
+- prev => prev === "light" ? "dark" : "light": A functional update to the state that toggles the current value.
+
+6. Key Concept:
+Dynamic Class Mapping: Using state to determine which CSS classes are applied to HTML elements, allowing for total UI transformations based on user interaction.

@@ -1,0 +1,19 @@
+1. Problem Title: Accurate Age Calculator (Years, Months, Days)
+
+2. System Overview:
+This application allows users to select their birth date and calculates their exact age. It goes beyond simple year subtraction by calculating the specific number of months and days, providing a precise age breakdown.
+
+3. Technologies Used:
+- HTML5 / CSS3
+- JavaScript (Date objects and Math)
+
+4. Working Flow:
+User selects date → JavaScript reads input → Logic compares current Date with input Date → Monthly and daily differences are adjusted for negatives → Result displayed.
+
+5. Code Explanation:
+- new Date(): Creates date objects for current time and birth time.
+- .getFullYear(), .getMonth(), .getDate(): Extract specific components for comparison.
+- Adjustment Logic: If the current day is less than the birth day, we "borrow" days from the previous month to ensure a positive day count. Similar logic applies to months and years.
+
+6. Key Concept:
+Temporal Logic: Handling the complexities of the Gregorian calendar (differing month lengths) programmatically to ensure accurate age calculation.

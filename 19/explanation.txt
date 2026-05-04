@@ -1,0 +1,20 @@
+1. Problem Title: Airplane Seating Arrangement and Booking System
+
+2. System Overview:
+This project simulates an airplane cabin layout (4 columns per row). It allows users to visualize which seats are taken and book available ones in real-time. The state is maintained throughout the session.
+
+3. Technologies Used:
+- PHP (Session state management and dynamic UI generation)
+- CSS3 (Visual seat states)
+
+4. Working Flow:
+Page loads → PHP checks session for seat data → Seating grid is generated via a loop → User clicks an available seat → URL parameter sent to PHP → PHP updates session array → Page reloads with the new state.
+
+5. Code Explanation:
+- array_fill(0, 24, "available"): Creates an initial array of 24 seats.
+- $_SESSION: Used to ensure that booked seats remain booked even if the page is refreshed.
+- modulo (%) logic: used to create the cabin aisle (between column 2 and 3) and start new rows after every 4th seat.
+- Conditional styling: CSS classes are applied based on the value in the seat array ('available' vs 'booked').
+
+6. Key Concept:
+Persistent UI State: Using server-side sessions to track user interactions and provide a stateful experience in a normally stateless web environment.

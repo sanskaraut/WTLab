@@ -1,0 +1,19 @@
+1. Problem Title: Public Service Grievance Registration System (PMC/PMT)
+
+2. System Overview:
+This application acts as a centralized portal for citizens to report issues with various public service organizations. It allows for categorized complaint filing and provides a unique reference number for future follow-up.
+
+3. Technologies Used:
+- PHP (Form processing and unique ID generation)
+- Bootstrap 5 (UI)
+
+4. Working Flow:
+User selects organization and category → Inputs personal details and description → PHP captures the data via POST → Logic generates a unique alpha-numeric tracking code → System displays confirmation with the code.
+
+5. Code Explanation:
+- uniqid('PREFIX-'): A PHP function that generates a time-based unique identifier, which we prefix with the organization name (e.g., PMC-...) for clarity.
+- strtoupper(): Used to make the tracking ID look more official and easier to read.
+- $_POST: Standard method for transmitting detailed user complaints securely to the server.
+
+6. Key Concept:
+Centralized Input Processing: Handling data from multiple categories (organizations) through a single unified interface and logic layer.

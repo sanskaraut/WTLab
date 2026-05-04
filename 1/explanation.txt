@@ -1,0 +1,21 @@
+1. Problem Title: Responsive CV with Video Background
+
+2. System Overview:
+This project demonstrates a modern resume/CV layout using Bootstrap 5 for responsiveness and custom CSS for a full-screen video background. It showcases how to overlay content on media and organize information using a multi-column grid system.
+
+3. Technologies Used:
+- HTML5
+- CSS3 (Video background layering)
+- Bootstrap 5 (Responsive grid and UI components)
+
+4. Working Flow:
+User → Opens browser → Page loads video in background → CV content displayed in a semi-transparent card overlay.
+
+5. Code Explanation:
+- <video autoplay muted loop>: Plays the background video automatically on a loop.
+- #video-background: CSS ensures the video covers the entire viewport and stays behind the content (z-index: -1).
+- .content: A semi-transparent white card that holds the CV data.
+- .row and .col-md-*: Bootstrap grid classes to create a 1/3 and 2/3 column split.
+
+6. Key Concept:
+CSS Object-Fit and Z-Index: Using object-fit: cover to make video responsive and z-index to manage the layering of the UI on top of the video.

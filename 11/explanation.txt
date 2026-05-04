@@ -1,0 +1,19 @@
+1. Problem Title: Limiting Concurrent User Sessions in PHP
+
+2. System Overview:
+This script prevents a single user account from being logged in on more than 3 devices or browsers simultaneously. It also enforces a strict 5-minute session timeout for security.
+
+3. Technologies Used:
+- PHP (Session API and File I/O)
+- JSON (Simple persistent storage for session tracking)
+
+4. Working Flow:
+User visits page → PHP checks if current Session ID is in registry → If not, and total sessions >= 3, block access → Otherwise, add current Session ID to registry with timestamp → Older sessions (>5 mins) are automatically pruned during each check.
+
+5. Code Explanation:
+- ini_set('session.gc_maxlifetime', 300): Configures the server to consider sessions older than 300 seconds as garbage.
+- json_decode/json_encode: Used to read and write the `sessions.json` file which tracks active IDs across different browser instances.
+- array_filter: Filters out entries in the session list that have exceeded the 5-minute threshold.
+
+6. Key Concept:
+Global State Management: Using an external file (or database) to maintain state that is visible across different independent browser sessions, which standard PHP sessions cannot do alone.

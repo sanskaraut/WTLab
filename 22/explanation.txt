@@ -1,0 +1,21 @@
+1. Problem Title: Interactive Shape Drawing on HTML5 Canvas
+
+2. System Overview:
+This project demonstrates how to use the HTML5 <canvas> element and JavaScript event listeners to create an interactive drawing board. Users can draw rectangles and lines by clicking and dragging their mouse.
+
+3. Technologies Used:
+- HTML5 Canvas API
+- JavaScript (Event Handling)
+- Bootstrap 5 (UI controls)
+
+4. Working Flow:
+User selects tool → mousedown (capture X,Y) → mouseup (capture end X,Y) → Processing (calculate dimensions) → Output (Canvas renders shape).
+
+5. Code Explanation:
+- canvas.getContext('2d'): Obtains the 2D drawing context.
+- e.offsetX / e.offsetY: Gets the mouse coordinates relative to the canvas.
+- strokeRect(x, y, w, h): Built-in method to draw a rectangular border.
+- beginPath(), moveTo(), lineTo(), stroke(): Sequence to draw a straight line.
+
+6. Key Concept:
+Coordinate System and Event Handling: Mapping browser events to canvas coordinates and using the Canvas API to manipulate pixels.

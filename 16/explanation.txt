@@ -1,0 +1,21 @@
+1. Problem Title: USD to INR Currency Converter using React
+
+2. System Overview:
+This application provides a simple tool to convert US Dollars (USD) to Indian Rupees (INR). It leverages React's reactivity system to perform the calculation instantly as the user types, without needing a 'Calculate' button.
+
+3. Technologies Used:
+- React 18 (Hooks)
+- JavaScript (Mathematical calculation and formatting)
+- CSS3 (Gradients and shadows)
+
+4. Working Flow:
+User enters USD amount → Input event handler triggers → React updates the 'usd' state variable → The component re-renders → The JSX expression {usd * rate} is re-evaluated → New converted value is displayed in the UI.
+
+5. Code Explanation:
+- const [usd, setUsd] = useState(1): Initializes the dollar amount to 1.
+- onChange={handleUsdChange}: Listens for keyboard input in the text field.
+- (usd * rate).toLocaleString(): Multiplies the current state value by the conversion rate and formats it as a currency string.
+- input-group: Bootstrap utility used to add the '$' symbol prefix to the input field.
+
+6. Key Concept:
+Reactivity and State: Understanding how React automatically keeps the View (HTML) in sync with the Model (JavaScript data) through the state mechanism.

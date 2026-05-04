@@ -1,0 +1,20 @@
+1. Problem Title: jQuery Style Switcher for Global Page Themes
+
+2. System Overview:
+This project demonstrates how to use jQuery to dynamically change the CSS properties of multiple HTML elements simultaneously. It provides three distinct themes that affect the body and all UI controls (inputs, dropdowns, buttons).
+
+3. Technologies Used:
+- HTML5 / Bootstrap 5
+- jQuery (DOM manipulation and styling)
+
+4. Working Flow:
+User → Clicks theme button → jQuery click event triggers → .css() method applied to <body> and specific class selectors → Page UI updates instantly.
+
+5. Code Explanation:
+- $(document).ready(): Ensures the script runs only after the DOM is fully loaded.
+- $("#style1").click(): Sets up a click listener for the button with ID 'style1'.
+- $("body").css({...}): Updates multiple CSS properties of the body tag using a JSON object.
+- $(".sample-control").css(...): Batch updates all elements with that class name.
+
+6. Key Concept:
+Dynamic Theming and jQuery Selectors: Using jQuery to select groups of elements and modify their visual state programmatically.

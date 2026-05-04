@@ -1,0 +1,21 @@
+1. Problem Title: Website with Toggleable Tabs for VIT Components
+
+2. System Overview:
+This project uses Bootstrap's Tab plugin to create a single-page interface where users can switch between different sections of information (SDP, EDI, DT, Course Projects) using a horizontal menu of pills/tabs.
+
+3. Technologies Used:
+- HTML5
+- Bootstrap 5 (Pills and Tab components)
+- CSS3 (Custom styling for the container)
+
+4. Working Flow:
+User → Clicks on a Navigation Pill → JavaScript (Bootstrap) toggles the visibility of the corresponding content pane → Content updates instantly.
+
+5. Code Explanation:
+- <ul class="nav nav-pills">: Defines the tab list structure.
+- data-bs-toggle="pill": Tells Bootstrap to handle the click event for tab switching.
+- data-bs-target="#pills-sdp": Specifies which content ID to show when clicked.
+- <div class="tab-pane">: Contains the actual text for each category, hidden by default except for the 'active' one.
+
+6. Key Concept:
+Single Page Application (SPA) feel: Using client-side switching to provide a fast, non-reloading user experience.

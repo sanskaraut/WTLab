@@ -1,0 +1,21 @@
+1. Problem Title: JavaScript Array Operations (Reverse, Sort, Search)
+
+2. System Overview:
+This application provides a user interface to input a list of elements and perform common array manipulations using JavaScript. It demonstrates the use of high-order functions and built-in array methods.
+
+3. Technologies Used:
+- HTML5 / Bootstrap 5 (UI)
+- Vanilla JavaScript (Logic)
+
+4. Working Flow:
+User → Inputs comma-separated values → Clicks an operation button → JS parses string into array → Method (reverse/sort/search) is applied → Result displayed in the output box.
+
+5. Code Explanation:
+- input.split(','): Converts the user's string input into a JavaScript array.
+- .map(item => item.trim()): Cleans up extra spaces around the elements.
+- .reverse(): Reverses the order of elements in-place.
+- .sort((a, b) => a - b): Sorts elements numerically in ascending order.
+- .indexOf(value): Searches for the first occurrence of the specified value.
+
+6. Key Concept:
+Data Manipulation in JavaScript: Understanding how to transform strings into arrays and use built-in methods for efficient data processing.

@@ -1,0 +1,20 @@
+1. Problem Title: Responsive Student Record Management (Edit and Delete)
+
+2. System Overview:
+This application provides a streamlined interface for managing existing database records. It allows users to modify student details directly within the table rows and remove redundant or incorrect data with a single click.
+
+3. Technologies Used:
+- PHP (Database communication and data persistence)
+- MySQL (Data storage)
+- Bootstrap 5 (Responsive table design)
+
+4. Working Flow:
+User opens page → PHP fetches all students and populates them into an editable table → User modifies a field and clicks 'Update' → PHP executes the UPDATE SQL command → User clicks 'Delete' → PHP executes the DELETE SQL command → Table refreshes to reflect the current DB state.
+
+5. Code Explanation:
+- UPDATE students SET ... WHERE id=X: The SQL command used to target and modify a specific record identified by its unique primary key.
+- DELETE FROM students WHERE id=X: The SQL command used to permanently remove a record from the database.
+- <input type="hidden" name="id">: Ensures the correct record ID is sent with the form even though the user doesn't need to see or edit the ID itself.
+
+6. Key Concept:
+Primary Key-Based Manipulation: Every operation (Edit/Delete) targets a specific record using its unique ID, ensuring that only the intended data is affected.

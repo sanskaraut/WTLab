@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age Calculator - Lab 24</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; display: flex; align-items: center; }
+        .card { border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.2); }
+        #result { font-size: 1.2rem; font-weight: bold; color: #764ba2; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-5">
+                <div class="card p-4">
+                    <h3 class="text-center mb-4">Age Calculator</h3>
+                    
+                    <div class="mb-3">
+                        <label class="form-label">Select Date of Birth:</label>
+                        <input type="date" id="dob" class="form-control" value="2000-01-01">
+                    </div>
+
+                    <button class="btn btn-primary w-100 mb-3" onclick="calculateAge()">Calculate Age</button>
+
+                    <div id="result" class="text-center mt-3 p-3 bg-light rounded d-none">
+                        <!-- Result will appear here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function calculateAge() {
+            const dobInput = document.getElementById('dob').value;
+            if (!dobInput) {
+                alert("Please select a date");
+                return;
+            }
+
+            const dob = new Date(dobInput);
+            const now = new Date();
+
+            let years = now.getFullYear() - dob.getFullYear();
+            let months = now.getMonth() - dob.getMonth();
+            let days = now.getDate() - dob.getDate();
+
+            // Adjust if current month/day is before birth month/day
+            if (days < 0) {
+                months--;
+                // Get days in previous month
+                const prevMonth = new Date(now.getFullYear(), now.getMonth(), 0).getDate();
+                days += prevMonth;
+            }
+
+            if (months < 0) {
+                years--;
+                months += 12;
+            }
+
+            const resultDiv = document.getElementById('result');
+            resultDiv.classList.remove('d-none');
+            resultDiv.innerHTML = `
+                <div class="text-muted small">You are</div>
+                <div class="mt-1">${years} Years, ${months} Months, ${days} Days old</div>
+            `;
+        }
+    </script>
+</body>
+</html>

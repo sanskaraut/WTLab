@@ -1,0 +1,19 @@
+1. Problem Title: Attendance System with Student Registration and Teacher Interface
+
+2. System Overview:
+This application provides two interfaces: one for students to register themselves into the database, and one for teachers to mark daily attendance. The teacher view dynamically lists all registered students with checkboxes to indicate presence.
+
+3. Technologies Used:
+- PHP / MySQL
+- Bootstrap 5
+
+4. Working Flow:
+Student fills registration form → PHP inserts record into 'students' table → Teacher opens page → PHP fetches all students → Teacher checks presence boxes → Form submitted → PHP iterates through all students and logs 'Present' or 'Absent' in the 'attendance' table with the current date.
+
+5. Code Explanation:
+- name="status[]": In HTML, adding brackets to the name creates an array in PHP, allowing multiple checkboxes to be processed together.
+- in_array($roll, $p_students): Checks if a specific roll number was among those checked by the teacher.
+- date('Y-m-d'): Generates the current system date for the attendance record.
+
+6. Key Concept:
+One-to-Many Relationship: A student record exists once, but multiple attendance records will exist for that student over time (different dates).

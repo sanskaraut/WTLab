@@ -1,0 +1,19 @@
+1. Problem Title: Smart Waste Collection and Authority Routing System
+
+2. System Overview:
+This application streamlines the process of waste management by allowing users to report waste accumulation at specific locations. The system automatically categorizes the waste and directs the request to the appropriate disposal or recycling authority.
+
+3. Technologies Used:
+- PHP (Processing and conditional routing)
+- Bootstrap 5 (UI)
+
+4. Working Flow:
+User selects waste type and enters location → PHP script receives the data via POST → Logic determines which authority is responsible (e.g., Plastic vs. Electronic) → A virtual 'notification' is sent → Confirmation with a tracking ID is shown to the user.
+
+5. Code Explanation:
+- <select name="waste_type">: Dropdown to ensure standardized input categories.
+- rand(1000, 9999): Simulates the generation of a unique reference number for the request.
+- if-else logic: Maps specific waste categories to their respective specialized handling units.
+
+6. Key Concept:
+Automated Routing: Using software logic to replace manual decision-making in logistical processes (identifying the correct department based on input characteristics).

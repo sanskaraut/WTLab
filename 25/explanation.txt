@@ -1,0 +1,20 @@
+1. Problem Title: Traffic Signal Simulation with Glowing LED Effects
+
+2. System Overview:
+This project simulates a real-world traffic signal system. It features a vertical signal box with three lights (Red, Yellow, Green) that can be controlled manually via buttons or automatically using a timer.
+
+3. Technologies Used:
+- HTML5 / CSS3 (Styling and glowing effects)
+- JavaScript (DOM manipulation and Timing API)
+
+4. Working Flow:
+User/Timer triggers change → JavaScript selects the target light element → CSS 'active' class is applied → box-shadow creates glow effect → Status text updates.
+
+5. Code Explanation:
+- .light: Defines the circular shape and default dark background.
+- .active: Adds the bright background color and an intensive box-shadow to simulate light emission.
+- changeLight(color, text): A helper function that toggles classes and updates the message.
+- setInterval(): Used in 'Auto Mode' to cycle through the signals every 2 seconds.
+
+6. Key Concept:
+Visual State Management: Using CSS classes to represent different physical states (On/Off) and managing those transitions via JavaScript.

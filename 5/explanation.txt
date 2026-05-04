@@ -1,0 +1,22 @@
+1. Problem Title: Database Operations (CRUD) using PHP and MySQL
+
+2. System Overview:
+This project implements a full CRUD (Create, Read, Update, Delete) cycle for student records. It demonstrates how to establish a connection to a MySQL database, execute SQL queries, and display the results in a dynamic HTML table.
+
+3. Technologies Used:
+- PHP (Backend logic)
+- MySQL (Database storage)
+- MySQLi (PHP Extension for DB connection)
+- Bootstrap 5 (UI)
+
+4. Working Flow:
+User enters data → PHP sends 'INSERT' query → MySQL saves record → PHP sends 'SELECT' query → UI displays all records in a table → User clicks Delete/Update → PHP sends corresponding 'DELETE'/'UPDATE' query.
+
+5. Code Explanation:
+- new mysqli(): Creates a new connection object to communicate with MySQL.
+- $conn->query(): Executes an SQL string on the connected database.
+- fetch_assoc(): Retrieves a single row from the result set as an associative array.
+- $_POST and $_GET: Used to capture form data and URL parameters (for deletion).
+
+6. Key Concept:
+Relational Database Interaction: Bridging a server-side language (PHP) with a persistent storage system (MySQL) to manage structured data.

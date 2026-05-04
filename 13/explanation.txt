@@ -1,0 +1,21 @@
+1. Problem Title: PHP Login Module with Registration, Sessions, and Cookies
+
+2. System Overview:
+This project provides a complete authentication system. It includes a combined Registration/Login interface using Bootstrap tabs. It demonstrates secure password storage, session-based access control, and persistent user tracking via cookies.
+
+3. Technologies Used:
+- PHP (Logic, Session management, Cookie management)
+- MySQL (User credential storage)
+- Bootstrap 5 (UI)
+
+4. Working Flow:
+User registers → Password is hashed → Record saved to DB → User logs in → PHP verifies hash → Session started → Cookie set with login time → User redirected to protected dashboard → User logs out → Session destroyed.
+
+5. Code Explanation:
+- password_hash($pass, PASSWORD_DEFAULT): Securely encrypts the password before saving to DB.
+- password_verify($input, $hash): Safely compares a plain-text input against a saved hash.
+- $_SESSION['logged_in_user']: A server-side flag used to restrict access to the 'Welcome' dashboard.
+- setcookie("last_login", ...): Stores non-sensitive metadata on the client's browser for persistence across session restarts.
+
+6. Key Concept:
+Authentication Security: Ensuring that user credentials are not stored in plain text and using sessions to maintain a 'logged-in' state securely on the server.

@@ -1,0 +1,22 @@
+1. Problem Title: Online Book Store Website using Spring Boot and Thymeleaf
+
+2. System Overview:
+This project demonstrates the creation of a multi-page web application using the Spring Boot framework. It features common e-commerce pages like a landing page, a product catalog, and user registration/login forms, all integrated with a unified navigation system.
+
+3. Technologies Used:
+- Spring Boot (Web Starter)
+- Thymeleaf (Server-side template engine)
+- Bootstrap 5 (Responsive frontend)
+
+4. Working Flow:
+User requests a URL (e.g., /catalog) → Spring Controller captures request → Controller prepares data (list of books) → Controller returns the name of a Thymeleaf template → Thymeleaf injects data into HTML → Server sends final HTML to browser.
+
+5. Code Explanation:
+- @Controller: Defines the class as a web controller that handles browser requests.
+- @GetMapping("/catalog"): Maps a specific URL path to a Java method.
+- Model model: An object used to pass data from the Java backend to the HTML frontend.
+- th:each="book : ${books}": A Thymeleaf attribute that loops through the books list and creates an HTML list item for each one.
+- th:if="${msg}": Conditionally displays an alert box only if a message exists.
+
+6. Key Concept:
+Model-View-Controller (MVC) Pattern: Separating the application logic (Controller), the data (Model), and the user interface (View) for better organization and maintainability.

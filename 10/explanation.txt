@@ -1,0 +1,22 @@
+1. Problem Title: Student Registration System using Node.js and Express
+
+2. System Overview:
+This project demonstrates how to build a basic web server using Node.js and the Express framework. It allows students to register through a web form, stores their data in the server's memory, and provides an API endpoint to retrieve the list of all registered students.
+
+3. Technologies Used:
+- Node.js (Runtime environment)
+- Express.js (Web framework)
+- JavaScript (In-memory array storage)
+
+4. Working Flow:
+User visits '/' → Express serves the registration form → User submits data → `app.post()` captures data using `req.body` → Object pushed to `students` array → Browser redirected back to home page → Table re-rendered with new data.
+
+5. Code Explanation:
+- express(): Initializes the application.
+- app.use(express.urlencoded()): Middleware that allows Express to read data sent from HTML forms.
+- students.push(): Adds the new student object to the global array.
+- res.json(): A helper method that automatically converts a JavaScript object into a JSON response for API usage.
+- app.listen(): Starts the server on the specified port (3000).
+
+6. Key Concept:
+Server-Side Routing and Request Handling: Understanding how to map URLs (endpoints) to specific logic blocks (handlers) in a Node.js environment.

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System Notifications - Lab 31</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://unpkg.com/redux@4.2.1/dist/redux.min.js"></script>
+    <script src="https://unpkg.com/react-redux@8.0.5/dist/react-redux.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { background: #f0f2f5; height: 100vh; }
+        .notification-tray { position: fixed; top: 20px; right: 20px; z-index: 1000; width: 300px; }
+        .toast-item { background: white; margin-bottom: 10px; padding: 15px; border-radius: 8px; border-left: 5px solid; box-shadow: 0 4px 10px rgba(0,0,0,0.1); animation: slideIn 0.3s ease; }
+        @keyframes slideIn { from { transform: translateX(100%); } to { transform: translateX(0); } }
+    </style>
+</head>
+<body>
+
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { createStore } = Redux;
+        const { Provider, useSelector, useDispatch } = ReactRedux;
+
+        // 1. Actions (Task 2)
+        const ADD_NOTIF = "ADD_NOTIF";
+        const REMOVE_NOTIF = "REMOVE_NOTIF";
+
+        // 2. Reducer (Task 3)
+        const initialState = { notifications: [] };
+        function notificationReducer(state = initialState, action) {
+            switch (action.type) {
+                case ADD_NOTIF:
+                    return { ...state, notifications: [...state.notifications, action.payload] };
+                case REMOVE_NOTIF:
+                    return { ...state, notifications: state.notifications.filter(n => n.id !== action.payload) };
+                default:
+                    return state;
+            }
+        }
+
+        // 3. Store (Task 1)
+        const store = createStore(notificationReducer);
+
+        function App() {
+            const notifications = useSelector(state => state.notifications);
+            const dispatch = useDispatch();
+
+            const addMessage = (type, text) => {
+                const id = Date.now();
+                dispatch({ 
+                    type: ADD_NOTIF, 
+                    payload: { id, type, text } 
+                });
+
+                // Auto-remove after 5 seconds
+                setTimeout(() => dispatch({ type: REMOVE_NOTIF, payload: id }), 5000);
+            };
+
+            return (
+                <div className="container py-5">
+                    <h2 className="text-center mb-5">Redux Notification System</h2>
+                    
+                    <div className="d-flex justify-content-center gap-3">
+                        <button className="btn btn-success" onClick={() => addMessage('success', 'Operation Completed!')}>Add Success</button>
+                        <button className="btn btn-danger" onClick={() => addMessage('danger', 'Error Detected!')}>Add Error</button>
+                        <button className="btn btn-warning" onClick={() => addMessage('warning', 'Low Battery Warning!')}>Add Warning</button>
+                    </div>
+
+                    <div className="mt-5 text-center text-muted">
+                        <p>Click buttons to trigger global notifications.</p>
+                        <p>Notifications persist in Redux store and auto-dismiss after 5s.</p>
+                    </div>
+
+                    {/* Task 4: Display Notifications */}
+                    <div className="notification-tray">
+                        {notifications.map(n => (
+                            <div key={n.id} className="toast-item" style={{borderLeftColor: getBorder(n.type)}}>
+                                <div className="d-flex justify-content-between align-items-center">
+                                    <strong className={`text-${n.type}`}>{n.type.toUpperCase()}</strong>
+                                    {/* Task 5: Allow dismissal */}
+                                    <button className="btn-close" onClick={() => dispatch({type: REMOVE_NOTIF, payload: n.id})}></button>
+                                </div>
+                                <div className="mt-1 small">{n.text}</div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            );
+        }
+
+        function getBorder(type) {
+            if (type === 'success') return '#198754';
+            if (type === 'danger') return '#dc3545';
+            if (type === 'warning') return '#ffc107';
+            return '#0d6efd';
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<Provider store={store}><App /></Provider>);
+    </script>
+</body>
+</html>

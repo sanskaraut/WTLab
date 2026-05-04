@@ -1,0 +1,21 @@
+1. Problem Title: Global System Notification Manager using Redux
+
+2. System Overview:
+This application provides a robust way to manage UI notifications (toasts) across a React app. It uses Redux to store a list of active alerts, ensuring that any part of the application can trigger a notification that will be displayed in a centralized "tray".
+
+3. Technologies Used:
+- React 18
+- Redux (Global array storage)
+- React-Redux (Provider and Hooks)
+
+4. Working Flow:
+Button Clicked → Action dispatched with payload (ID, type, text) → Reducer adds object to `notifications` array → `useSelector` triggers UI update → Notification appears in the tray → Timer or user-click dispatches "Remove" action → Reducer filters out that ID → Notification disappears.
+
+5. Code Explanation:
+- ADD_NOTIF: Action that appends a new message object to the global state array.
+- REMOVE_NOTIF: Action that removes a specific message by its unique ID.
+- setTimeout(): Used within the component to schedule the removal of a notification after 5 seconds, providing an "auto-dismiss" feature.
+- key={n.id}: Crucial for React to track which toast was removed without re-rendering the entire tray.
+
+6. Key Concept:
+Transient State Management: Using Redux to handle temporary UI elements that need to be accessible from any component but only exist for a short duration.

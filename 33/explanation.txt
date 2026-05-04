@@ -1,0 +1,20 @@
+1. Problem Title: Brute-Force Protection with Account Locking in Spring Boot
+
+2. System Overview:
+This application enhances security by preventing brute-force attacks. It monitors consecutive failed login attempts for each user. If a predefined limit (3 attempts) is exceeded, the system automatically locks the account for a specific period (30 seconds), preventing further guessing.
+
+3. Technologies Used:
+- Java / Spring Boot
+- Collections (HashMap for state tracking)
+
+4. Working Flow:
+User submits credentials → PHP checks if user's timestamp in 'lock' map is within the last 30s → If yes, block immediately → If no, verify password → If incorrect, increment 'attempts' counter in map → If counter reaches 3, add current timestamp to 'lock' map → User receives lock message.
+
+5. Code Explanation:
+- System.currentTimeMillis(): Retrieves the current Unix time in milliseconds, used to measure the elapsed lock duration.
+- attemptsMap.getOrDefault(user, 0) + 1: A concise way to increment a counter in a HashMap while handling new users safely.
+- lockTimeMap.remove(user): Resets the security status of the user once the lock duration has expired.
+- Conditional Logic: Prioritizes checking the lock status BEFORE validating the password to ensure the brute-force protection is active.
+
+6. Key Concept:
+Rate Limiting and Anti-Automation: Implementing safeguards that slow down or stop automated scripts from attempting thousands of passwords against a user account.

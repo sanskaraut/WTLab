@@ -1,0 +1,23 @@
+# Lab 29: Real-time Digital Clock (React Hooks)
+
+## How to Run
+1. Open the `29/` folder.
+2. Open `index.html` in your browser.
+
+## Requirements
+- Browser.
+- Internet (React CDN).
+
+## Example Input
+- The clock starts automatically.
+- Click **STOP CLOCK** to pause the time.
+- Click **START CLOCK** to resume.
+
+## Expected Output
+- A glowing green digital clock display.
+- The seconds update every 1000ms.
+- Format: `HH:MM:SS` (24-hour format).
+
+## Notes
+- Uses `useEffect` with a `setInterval` to create the ticking effect.
+- The interval is cleared (cleanup) whenever the component unmounts or the clock is stopped.

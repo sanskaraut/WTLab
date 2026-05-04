@@ -1,0 +1,11 @@
+{
+  "name": "lab-10-student-reg",
+  "version": "1.0.0",
+  "main": "app.js",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "scripts": {
+    "start": "node app.js"
+  }
+}

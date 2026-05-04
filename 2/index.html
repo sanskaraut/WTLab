@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIT Course Components - Lab 2</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            padding-top: 50px;
+        }
+        .container {
+            max-width: 800px;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .nav-pills .nav-link.active {
+            background-color: #d63384;
+        }
+        .tab-content {
+            padding: 20px;
+            border: 1px solid #dee2e6;
+            border-top: none;
+            border-radius: 0 0 5px 5px;
+        }
+        h2 { color: #d63384; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2 class="text-center mb-4">VIT Curriculum Highlights</h2>
+        <p class="text-muted text-center mb-5">Click the tabs below to learn about SDP, EDI, DT, and Course Projects.</p>
+
+        <!-- Nav Pills -->
+        <ul class="nav nav-pills nav-justified mb-3" id="pills-tab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="pills-sdp-tab" data-bs-toggle="pill" data-bs-target="#pills-sdp" type="button" role="tab">SDP</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="pills-edi-tab" data-bs-toggle="pill" data-bs-target="#pills-edi" type="button" role="tab">EDI</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="pills-dt-tab" data-bs-toggle="pill" data-bs-target="#pills-dt" type="button" role="tab">DT</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="pills-cp-tab" data-bs-toggle="pill" data-bs-target="#pills-cp" type="button" role="tab">Course Projects</button>
+            </li>
+        </ul>
+
+        <!-- Tab Content -->
+        <div class="tab-content" id="pills-tabContent">
+            <!-- SDP -->
+            <div class="tab-pane fade show active" id="pills-sdp" role="tabpanel">
+                <h4>Skill Development Program (SDP)</h4>
+                <p>SDP focuses on enhancing technical skills beyond the regular curriculum. It includes workshops, certifications, and hands-on training in emerging technologies like AI, Cloud Computing, and Blockchain.</p>
+                <ul>
+                    <li>Practical skill acquisition</li>
+                    <li>Industry-ready certifications</li>
+                    <li>Hands-on workshops</li>
+                </ul>
+            </div>
+            <!-- EDI -->
+            <div class="tab-pane fade" id="pills-edi" role="tabpanel">
+                <h4>Engineering Design and Innovation (EDI)</h4>
+                <p>EDI is a unique component that encourages students to apply engineering principles to solve real-world problems. It fosters a culture of innovation and design thinking from the first year.</p>
+                <ul>
+                    <li>Project-based learning</li>
+                    <li>Interdisciplinary collaboration</li>
+                    <li>Prototyping and testing</li>
+                </ul>
+            </div>
+            <!-- DT -->
+            <div class="tab-pane fade" id="pills-dt" role="tabpanel">
+                <h4>Design Thinking (DT)</h4>
+                <p>Design Thinking teaches a human-centric approach to problem-solving. Students learn to empathize with users, define problems, ideate solutions, and create prototypes.</p>
+                <ul>
+                    <li>Empathy mapping</li>
+                    <li>Ideation techniques</li>
+                    <li>User-centric solutions</li>
+                </ul>
+            </div>
+            <!-- Course Projects -->
+            <div class="tab-pane fade" id="pills-cp" role="tabpanel">
+                <h4>Course Projects</h4>
+                <p>Every core subject at VIT includes a course project. This ensures that students don't just learn theory but also implement concepts to build working models or software.</p>
+                <ul>
+                    <li>Subject-specific application</li>
+                    <li>Teamwork and coordination</li>
+                    <li>Continuous evaluation</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

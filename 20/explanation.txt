@@ -1,0 +1,20 @@
+1. Problem Title: Multiplayer Tic-Tac-Toe Game in PHP
+
+2. System Overview:
+This project is a web-based implementation of the classic Tic-Tac-Toe game. It features a 3x3 grid, handles turn-switching between two players (X and O), and includes automated win/draw detection logic.
+
+3. Technologies Used:
+- PHP (Game logic and win-detection algorithms)
+- HTML5 / CSS3 (Grid layout and styling)
+
+4. Working Flow:
+Player clicks an empty cell → URL sends move index to PHP → PHP updates the session-based board array → PHP runs a win-check algorithm → If win/draw found, lock board and show result → Otherwise, switch turn to next player.
+
+5. Code Explanation:
+- $_SESSION['board']: An array of 9 strings representing the 3x3 grid.
+- checkWin() function: Uses a predefined array of winning indices (e.g., [0,1,2] for top row) and compares the board values at those positions.
+- in_array("", $board): Checks if there are any empty spaces left to determine if a draw has occurred.
+- css grid-template-columns: repeat(3, 80px): Uses modern CSS Grid to create a perfect 3x3 alignment.
+
+6. Key Concept:
+Game Logic Implementation: Translating physical game rules into programmable algorithms (loops and conditional checks) and maintaining game state across browser refreshes.

@@ -1,0 +1,20 @@
+1. Problem Title: Real-time Digital Clock with Side-Effect Management
+
+2. System Overview:
+This application displays a live digital clock that updates every second. It demonstrates how to handle side effects (like timers) in React using the `useEffect` hook and how to manage the lifecycle of a long-running process.
+
+3. Technologies Used:
+- React 18 (Hooks: useState, useEffect)
+- JavaScript (Date and Timer APIs)
+
+4. Working Flow:
+Component mounts → `useEffect` triggers → `setInterval` starts → Every 1000ms, `setTime` updates with the current system time → Component re-renders → Formatted time string displayed → If user stops, `clearInterval` is called.
+
+5. Code Explanation:
+- useEffect(() => {...}, [isRunning]): This hook runs code after the component renders. The dependency array `[isRunning]` tells React to restart the effect if the start/stop state changes.
+- setInterval(): A standard JS function that executes a block of code repeatedly at fixed time intervals.
+- return () => clearInterval(timerID): The cleanup function. It is critical to prevent memory leaks and multiple timers running simultaneously.
+- padStart(2, '0'): A JS string method used to ensure that single-digit numbers (like 9 seconds) are displayed as '09'.
+
+6. Key Concept:
+Lifecycle Management: Understanding how to synchronize external systems (timers) with React's rendering cycle using `useEffect`.

@@ -1,0 +1,19 @@
+1. Problem Title: PHP Electricity Bill Calculator with Slab Pricing
+
+2. System Overview:
+This application calculates the monthly electricity bill based on the number of units consumed. It follows a tiered pricing model where the rate per unit increases as consumption goes higher, encouraging energy conservation.
+
+3. Technologies Used:
+- PHP (Mathematical logic and conditional processing)
+- HTML5 / Bootstrap 5 (UI)
+
+4. Working Flow:
+User enters units → Form submitted via POST → PHP receives units → Logic checks which slabs apply → Total amount is calculated cumulatively → Result displayed with formatting.
+
+5. Code Explanation:
+- $_POST['units']: Retrieves the user input from the form.
+- Cumulative logic: For 150 units, it doesn't just multiply 150 * 4.00. It calculates the first 50 at rate A, and the remaining 100 at rate B.
+- number_format($total, 2): Formats the result to look like currency (e.g., 575.00).
+
+6. Key Concept:
+Conditional Logic (Tiers): Implementing multi-step decision-making processes where multiple conditions might be partially met (cumulative calculations).

@@ -1,0 +1,21 @@
+1. Problem Title: Student Semester Result System using React Components
+
+2. System Overview:
+This project uses React to build a modular result-card application. It breaks down the UI into reusable components (App, Student, Result) and demonstrates how data flows through a React application using Props and State.
+
+3. Technologies Used:
+- React 18 (Functional Components)
+- Babel (Transpiling JSX in browser)
+- Bootstrap 5 (Styling)
+
+4. Working Flow:
+App component initializes data in state → Data passed down to 'Student' component via Props → 'Student' component maps through marks and renders 'Result' components → 'Result' component performs calculation and determines Pass/Fail status → Result rendered to DOM.
+
+5. Code Explanation:
+- useState(): Hook used to define student information and marks within the App component.
+- Props: The mechanism used to pass `name`, `course`, and `marks` down to child components.
+- .map(): Iterates through the marks array to dynamically generate a Result card for each subject.
+- toFixed(2): Ensures the total weighted score is displayed to two decimal places.
+
+6. Key Concept:
+Component-Based Architecture: Building complex UIs by composing small, independent, and reusable pieces (components) that communicate via props.
